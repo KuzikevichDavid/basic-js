@@ -12,7 +12,7 @@
 
 function getSeason(date) {
   if (!date) return 'Unable to determine the time of year!';
-  if (!(date instanceof Date)) throw new Error('Invalid date!');
+  if (!(date instanceof Date) || Object.getOwnPropertyNames(date).length > 0) throw new Error('Invalid date!');
   switch (date.getMonth()) {
     case 0:
     case 1:
